@@ -7,8 +7,7 @@
 ls /tmp
 if [$? -ne 0 ]; then
 echo "SUCCESS"
-else
-echo "FAILURE"
 fi
+echo "FAILURE"
 
 
