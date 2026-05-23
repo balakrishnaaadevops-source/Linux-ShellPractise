@@ -15,3 +15,9 @@ ls /fakedir &>> $LOGS_FILE
 VALIDATE $? "ls /fakedir"
 ping -c1 google.com &>> $LOGS_FILE
 VALIDATE $? "ping -c1 google.com"
+if [ $ANY_FAILED -eq 0 ]; then
+echo "ALL commands success"
+exit 0
+else "one or more commands failed"
+exit 1
+fi
