@@ -1,6 +1,6 @@
 #!bin/bash
 LOGS_DIR="/home/ec2-user/logs"
-LOGS_FILE="$LOGS_DIR/$#.log
+LOGS_FILE="$LOGS_DIR/$#.log"
 ls /tmp &>> $LOGS_FILE
 if [ $? -eq 0 ]; then
  echo "SUCCESS"
