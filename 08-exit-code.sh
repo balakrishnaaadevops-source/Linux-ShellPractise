@@ -3,15 +3,15 @@ LOGS_DIR="/home/ec2-user/logs"
 LOGS_FILE="$LOGS_DIR/$0.log"
 VALIDATE()
 {
-if [ $? -eq 0 ]; then
- echo "SUCCESS"
+if [ $1 -eq 0 ]; then
+ echo " $2 : SUCCESS"
 else
- echo "FAILURE"
+ echo " $2 : FAILURE"
 fi
 }
 ls /tmp &>> $LOGS_FILE
-VALIDATE()
+VALIDATE $? "ls /tmp"
 ls /fakedir &>> $LOGS_FILE
-VALIDATE()
+VALIDATE $? "ls /fakedir"
 ping -c1 google.com &>> $LOGS_FILE
-VALIDATE()
+VALIDATE $? "ping -c1 google.com"
