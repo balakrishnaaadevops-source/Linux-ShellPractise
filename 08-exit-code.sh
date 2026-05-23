@@ -13,7 +13,7 @@ echo "FAILURE"
 fi
 ping -c1 google.com
 if [ $? -eq 0 ]; then
-echo "SUCCESS"'
+echo "SUCCESS"
 else
 echo "FAILURE"
 fi
