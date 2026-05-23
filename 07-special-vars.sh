@@ -14,4 +14,4 @@ echo "current script PID : $$"
 sleep 15 &
 echo "backgroup of PID : $!"
 echo "Randam number $RANDOM"
-echo "seconds of the script took $SECONDS"
+echo "seconds of the script took : $SECONDS"
