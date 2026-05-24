@@ -2,6 +2,7 @@
 num=$1
 if [ $num -le 1 ]; then
 echo "$num :is not a prime number"
+exit
 else 
 echo "$num : is a prime number"
 fi
@@ -14,4 +15,3 @@ do
  fi
  done
  echo "$num is a prime number"
- 
