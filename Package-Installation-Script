@@ -17,7 +17,7 @@ echo "run script with root user"
 exit 1
 fi
 dnf list installed git
-if [ $? -eq 0 ]
+if [ $? -eq 0 ]; then
 echo "GIT alreday installed SKIPPING"
 exit 0
 else
