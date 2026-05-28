@@ -1,0 +1,27 @@
+#!/bin/bash
+# Requirement
+
+# Write script to:
+
+# Check root user
+# Check whether git installed or not
+# If already installed:
+# print skip message
+# Else:
+# install git
+# Validate installation status using function
+
+USER=$(id -u)
+if [ $USER -nq 0 ]; then
+echo "run script with root user"
+exit 1
+fi
+dnf list installed git
+if [ $? -eq 0 ]
+echo "GIT alreday installed SKIPPING"
+exit 0
+else
+ echo "Installing GIT packages..."
+ dnf install git -y
+ fi
+ 
