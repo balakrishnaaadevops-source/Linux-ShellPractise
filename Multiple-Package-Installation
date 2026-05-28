@@ -1,0 +1,34 @@
+#!/bin/bash
+# equirement
+# Install:
+# nginx
+# mysql
+# docker
+# Using:
+# loop
+# validate function
+USER=$(id -u)
+if [ $USER -ne 0 ]; then
+echo "Run $0 with root user"
+exit 1
+fi
+validate()
+{
+    if [ $2 -ne 0 ]; then
+    echo "$1 installation failed"
+    exit 1
+    else 
+    echo "$1 installtion sucess"
+    fi
+}
+for package in mysql git nginx
+do
+    dnf list installed $package
+    if [ $? -eq 0 ]; then
+        echo "$package alreday installed SKIPPING"
+        exit 0
+        else "$package installing ..."
+        dnf install $package -y
+        validate $package $?
+    fi
+done
