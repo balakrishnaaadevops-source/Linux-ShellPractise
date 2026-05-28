@@ -26,7 +26,7 @@ do
     dnf list installed $package
     if [ $? -eq 0 ]; then
         echo "$package alreday installed SKIPPING"
-        exit 0
+        
         else "$package installing ..."
         dnf install $package -y
         validate $package $?
