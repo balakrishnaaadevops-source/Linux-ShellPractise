@@ -16,7 +16,7 @@ echo "enter package name to install"
 for package in $@
 do
     dnf list installed $package
-    if [ $? -ne 0 ]; then
+    if [ $? -eq 0 ]; then
         echo " $package alreday installed ...SKIPPING"
         else
         echo "$package installing"
