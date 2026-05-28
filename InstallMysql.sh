@@ -11,8 +11,9 @@ if [ $USER -ne 0 ]; then
 fi
 dnf list installed mysql
 if [ $? -eq 0 ]; then
- echo "mysql installed alreday" 
+ echo "mysql installed alreday"
+ exit 0
  else 
  echo "Installing mysql"
- dnf install mysql
+ dnf install mysql -y
 fi
