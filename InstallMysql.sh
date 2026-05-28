@@ -7,6 +7,5 @@
 if [ $? -e 0 ]
  echo "Installing MYSQL"
  exit 0
- else
  echo "Run script : $0 with root user"
 fi
