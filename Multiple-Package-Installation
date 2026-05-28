@@ -9,26 +9,17 @@
 # validate function
 USER=$(id -u)
 if [ $USER -ne 0 ]; then
-echo "Run $0 with root user"
+echo ("Run script $0 with ROOT or sudo")
 exit 1
 fi
-validate()
-{
-    if [ $2 -ne 0 ]; then
-    echo "$1 installation failed"
-    exit 1
-    else 
-    echo "$1 installtion sucess"
-    fi
-}
-for package in mysql git nginx
+for package in $@
 do
     dnf list installed $package
-    if [ $? -eq 0 ]; then
-        echo "$package alreday installed SKIPPING"
-        
-        else "$package installing ..."
+    if [ $? -ne 0 ]; then
+        echo " $package alreday installed ...SKIPPING"
+        else
+        echo "$package installing"
         dnf install $package -y
-        validate $package $?
     fi
+
 done
