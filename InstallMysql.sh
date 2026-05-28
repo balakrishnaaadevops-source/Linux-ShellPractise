@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # what all are pre-requisite to install mysql
 # first check the user has executed with root or sudo permissions
@@ -7,7 +7,7 @@
 USER=$(id -u)
 if [ $USER -ne 0 ]; then
  echo "Run Script $0 with root user or sudo user "
- exit 1
+ exit 0
 fi
 validate()
 {
