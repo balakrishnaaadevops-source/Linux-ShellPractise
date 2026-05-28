@@ -12,7 +12,7 @@
 # Validate installation status using function
 
 USER=$(id -u)
-if [ $USER -nq 0 ]; then
+if [ $USER -ne 0 ]; then
 echo "run script with root user"
 exit 1
 fi
