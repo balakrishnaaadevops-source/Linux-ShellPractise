@@ -6,6 +6,6 @@
 # if not then install mysql 
 USER=$(id -u)
 if [ $USER -ne 0 ]; then
- echo "Run Script $0 with $USER "
+ echo "Run Script $0 with root user or sudo user "
  exit 1
 fi
