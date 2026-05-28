@@ -1,0 +1,14 @@
+#!/bin/bash
+# Requirement
+# Write script to check:
+# •	nginx service running or not 
+# If not running:
+# •	start service 
+# •	validate success/failure 
+check=$(systemctl nginx status)
+if [ $check -eq running ]; then
+echo "Nginx running"
+else 
+echo "Start Nginx server"
+systemctl nginx start
+fi
