@@ -9,3 +9,9 @@ if [ $USER -ne 0 ]; then
  echo "Run Script $0 with root user or sudo user "
  exit 1
 fi
+mysql=$(mysql --vesrion)
+if [ $mysql -eq 0 ]; then
+ echo "mysql installed alreday"
+ exit 0
+ else "Installing mysql"
+fi
