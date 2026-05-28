@@ -25,7 +25,7 @@ echo "MYSQL installed SKIPPING ..."
 else
 echo "Installing MYSQL"
 dnf install mysql -y
-validate $?
+validate mysql $?
 fi
 dnf list installed nginx
 if [ $? -eq 0 ]; then
@@ -33,4 +33,5 @@ echo "Nginx Installed SKIPPING ..."
 else
 echo "Installing Nginx"
 dnf install nginx -y
+validate nginx $?
 fi
